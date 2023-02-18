@@ -1,0 +1,17 @@
+export FLASK_APP=Image_gathering
+export FLASK_ENV=development
+flask run -p 5001
+
+touch log.csv
+touch recordings.xlsx
+
+
+1.  Manuel create a new(empty) repository on Github 
+2.  git clone https
+3.  cd https
+git init
+git add -A
+git status
+git commit -m "2st commit"
+git branch -M 'update/24/10-22'
+git push -u origin 'update/24/10-22' 

@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Image Gathering</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<style>
+h1,h2,h3,h4,h5,h6 {font-family: "Oswald"}
+body {font-family: "Open Sans"}
+.pill-nav {
+  width: 520px;
+}
+.pill-nav label {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+  font-size: 15px;
+  border-radius: 5px;
+  width: 150px;
+}
+.pill-nav label:hover {
+  background-color: #ddd;
+  color: black;
+}
+.pill-nav label.active {
+  background-color: dodgerblue;
+  color: white;
+}
+</style>
+</head>
+<body class="w3-light-grey">
+  
+<div class="w3-bar w3-black w3-hide-small">
+  <a href="index.html" class="w3-bar-item w3-button"><i class="fa fa-picture-o"></i></a>
+  <a href="indexrecord.html" class="w3-bar-item w3-button"><i class="fa fa-picture-o"></i></a>
+</div>
+<div class="w3-content" style="max-width:1600px">
+  <!-- Grid -->
+  <div class="w3-row w3-padding w3-border">
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+      <!-- Blog entry -->
+      <div style="width:600px" class="w3-container w3-white w3-margin w3-padding-large">
+        <div class="w3-center">
+          <h3>XCI - AI Image Gathering</h3>
+        </div>
+        <hr>
+        <div class="pill-nav">
+          <input class="a1" onchange="yesno()" value="Baidu" name="check" type="radio" id="Baidu_x">
+          <label  style="color: green;" for="Baidu_x">Baidu🇨🇳</label>
+          <input class="a1" onchange="yesno()" value="Becovi" name="check" type="radio" id="Becovi_x">
+          <label  style="color: green" for="Becovi_x">Becovi🇻🇬</label>
+          <input class="a1" onchange="yesno()" value="Bing" name="check" type="radio" id="Bing_x">
+          <label  style="color: green;" for="Bing_x">Bing🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Brave" name="check" type="radio" id="Brave_x">
+          <label  style="color: green" for="Brave_x">Brave🇺🇸</label>
+
+
+
+          <input class="a1" onchange="yesno()" value="DuckDuckGo" name="check" type="radio" id="DuckDuckGo_x">
+          <label  style="color: green;" for="DuckDuckGo_x">DuckDuckGo🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Ecosia" name="check" type="radio" id="Ecosia_x">
+          <label  style="color: green" for="Ecosia_x">Ecosia🇩🇪</label>
+
+          <input class="a1" onchange="yesno()" value="EveryPixel" name="check" type="radio" id="EveryPixel_x">
+          <label  style="color: red" for="EveryPixel_x">EveryPixel🇻🇳</label>
+
+          <input class="a1" onchange="yesno()" value="Flickr" name="check" type="radio" id="Flickr_x">
+          <label  style="color: green" for="Flickr_x">Flickr🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Freepik" name="check" type="radio" id="Freepik_x">
+          <label  style="color: red" for="Freepik_x">Freepik🇪🇸</label>
+          <input class="a1" onchange="yesno()" value="Getty" name="check" type="radio" id="Getty_x">
+          <label  style="color: green" for="Getty_x">Getty🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Gibiru" name="check" type="radio" id="Gibiru_x">
+          <label  style="color: green" for="Gibiru_x">Gibiru🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Google" name="check" type="radio" id="Google_x">
+          <label  style="color: red;" for="Google_x">Google🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Metacrawler" name="check" type="radio" id="Metacrawler_x">
+          <label  style="color: green" for="Metacrawler_x">Metacrawler🇬🇧</label>
+
+          <input class="a1" onchange="yesno()" value="MetaGer" name="check" type="radio" id="MetaGer_x">
+          <label  style="color: red" for="MetaGer_x">MetaGer🇩🇪</label>
+
+          <input class="a1" onchange="yesno()" value="Naver" name="check" type="radio" id="Naver_x">
+          <label  style="color: green" for="Naver_x">Naver🇰🇷</label>
+          <input class="a1" onchange="yesno()" value="Openverse" name="check" type="radio" id="Openverse_x">
+          <label  style="color: red" for="Openverse_x">Openverse🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Pexels" name="check" type="radio" id="Pexels_x">
+          <label  style="color: green" for="Pexels_x">Pexels🇩🇪</label>
+          <input value="Pinterest" onchange="yesno()" name="check" type="radio" id="Pinterest_x">
+          <label style="color: orange" for="Pinterest_x">Pinterest🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Pixabay" name="check" type="radio" id="Pixabay_x">
+          <label  style="color: green" for="Pixabay_x">Pixabay🇩🇪</label>
+          <input class="a1" onchange="yesno()" value="PhotoSearch" name="check" type="radio" id="PhotoSearch_x">
+          <label  style="color: red" for="PhotoSearch_x">PhotoSearch🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="PublicDomainPictures" name="check" type="radio" id="PublicDomainPictures_x">
+          <label  style="font-size: 12px; color: red" for="PublicDomainPictures_x">PublicDomainPics🇮🇳</label>
+
+          
+          <input class="a1" onchange="yesno()" value="Qmamu" name="check" type="radio" id="Qmamu_x">
+          <label  style="color: green" for="Qmamu_x">Qmamu🇮🇳</label>
+          <input class="a1" onchange="yesno()" value="Qwant" name="check" type="radio" id="Qwant_x">
+          <label  style="color: green" for="Qwant_x">Qwant🇫🇷</label>
+          <input class="a1" onchange="yesno()" value="SearchEncrypt" name="check" type="radio" id="SearchEncrypt_x">
+          <label  style="font-size: 14px; color: green" for="SearchEncrypt_x">SearchEncrypt🇨🇾</label>
+          <input class="a1" onchange="yesno()" value="Shutterstock" name="check" type="radio" id="Shutterstock_x">
+          <label  style="font-size: 14px; color: red" for="Shutterstock_x">Shutterstock🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Sogou" name="check" type="radio" id="Sogou_x">
+          <label  style="color: red" for="Sogou_x">Sogou🇨🇳</label>
+
+          <input class="a1" onchange="yesno()" value="Startpage" name="check" type="radio" id="Startpage_x">
+          <label  style="color: red" for="Startpage_x">Startpage🇳🇱</label>
+
+          <input class="a1" onchange="yesno()" value="Swisscows" name="check" type="radio" id="Swisscows_x">
+          <label  style="color: red" for="Swisscows_x">Swisscows🇨🇭</label>
+          <input class="a1" onchange="yesno()" value="Tumblr" name="check" type="radio" id="Tumblr_x">
+          <label style="color: red" for="Tumblr_x">Tumblr🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Unsplash" name="check" type="radio" id="Unsplash_x">
+          <label  style="color: red" for="Unsplash_x">Unsplash🇨🇦</label>
+          <input class="a1" onchange="yesno()" value="Website" name="check" type="radio" id="Website_x">
+          <label style="color: red" for="Website_x">Website🌎</label>
+          <input class="a1" onchange="yesno()" value="Yahoo" name="check" type="radio" id="Yahoo_x">
+          <label  style="color: red" for="Yahoo_x">Yahoo🇺🇸</label>
+          <input class="a1" onchange="yesno()" value="Yandex" name="check" type="radio" id="Yandex_x">
+          <label  style="color: red;" for="Yandex_x">Yandex🇷🇺</label>
+
+
+          
+        </div>
+        <hr>
+        <label id="placeholder_info" style="color: black; margin-right: 3px;" for="info_in"></label>
+          <p value="" placeholder="" name="INFO" type="text" id="info_in">Reverse engines</p>
+          <ul>
+            <li>SauceNao</li>
+            <li>PicsLikeThat</li>
+            <li>TinEye</li>
+          </ul>
+          <hr>
+          <br>
+
+         <label id="placeholder_key" style="color: black" for="keyword_in">Keyword : </label>
+          <input placeholder="Search" name="Keyword" type="text" id="keyword_in">
+          <br>
+
+          <button id="submit">Submit</button>
+          <hr>   
+
+      </div>
+      
+    </div>
+
+
+  <!-- END GRID -->
+  </div>
+
+<!-- END w3-content -->
+</div>
+
+
+<!-- Footer -->
+
+
+<script>
+    var group_=(el,callback)=>{
+    el.forEach((checkbox)=>{
+    callback(checkbox)
+         })
+    }
+
+    group_(document.getElementsByName('check'),(item)=>{
+    item.onclick=(e)=>{
+    group_(document.getElementsByName('check'),(item)=>{
+    item.checked=false;
+    })
+    e.target.checked=true;
+
+    }
+    })
+</script>
+<script>
+function yesno() {
+
+  //Placeholders
+  var placeholder_key = document.getElementById('placeholder_key');
+  var placeholder_info = document.getElementById('placeholder_info');
+
+  placeholder_number
+  //Radio-button and click function
+  var clik_1 = document.getElementById('Baidu_x');
+  clik_1.addEventListener('click',function(evt){
+  if(clik_1.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+
+  var clik_2 = document.getElementById('Bing_x');
+  clik_2.addEventListener('click',function(evt){
+  if(clik_2.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+
+  var clik_3 = document.getElementById('Brave_x');
+  clik_3.addEventListener('click',function(evt){
+  if(clik_3.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+  
+  var clik_4 = document.getElementById('DuckDuckGo_x');
+  clik_4.addEventListener('click',function(evt){
+  if(clik_4.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+
+  var clik_5 = document.getElementById('Ecosia_x');
+  clik_5.addEventListener('click',function(evt){
+  if(clik_5.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+
+
+
+ 
+  //#8-Getty✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+  var clik_8 = document.getElementById('Getty_x');
+  clik_8.addEventListener('click',function(evt){
+  if(clik_8.checked)
+  {
+    placeholder_info.innerHTML= "1 Page = 60 Images ___ 0 = All Pages"
+    placeholder_key.innerHTML='Keywords :'
+    placeholder_number.innerHTML='Pages :'
+
+  }},false);
+  
+  var clik_9 = document.getElementById('Gibiru_x');
+  clik_9.addEventListener('click',function(evt){
+  if(clik_9.checked)
+  {
+    document.getElementsByName('Number')[0].placeholder='All';
+    placeholder_key.innerHTML='Keyword :'
+    document.getElementById("number_in").disabled = true;
+
+
+  }},false);
+ 
+  var clik_10 = document.getElementById('Google_x');
+  clik_10.addEventListener('click',function(evt){
+  if(clik_10.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+   
+
+  
+  var clik_12 = document.getElementById('Metacrawler_x');
+  clik_12.addEventListener('click',function(evt){
+  if(clik_12.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+  
+  var clik_13 = document.getElementById('Naver_x');
+  clik_13.addEventListener('click',function(evt){
+  if(clik_12.checked)
+  {
+    placeholder_key.innerHTML='Keyword :'
+
+  }},false);
+  
+  
+  
+  
+  
+  
+ 
+
+
+
+
+}
+
+
+  $(document).ready(function() {
+      $('button').click(function() {
+          var radio = $("input[type=radio][name=check]").filter(":checked")[0];
+          const KEY = document.getElementById("keyword_in").value;
+
+          //#1-Baidu✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          if (radio.value == "Baidu") {
+            key = KEY
+            fetch('http://127.0.0.1:5001/Baidu?ID='+key+"*")
+            .then(res => res.json())
+            .then(data => {
+          })    
+          }
+          //#2-Becovi✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Becovi") {
+              key = KEY
+              fetch('http://127.0.0.1:5001/Becovi?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+            })         
+            }
+
+          //#3-Bing✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Bing") {
+            key = KEY
+          fetch('http://127.0.0.1:5001/Bing?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })
+          }
+          //#4-Brave✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Brave") {
+            key = KEY
+          fetch('http://127.0.0.1:5001/Brave?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })
+          }
+
+
+          //#5-DuckDuckGo✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "DuckDuckGo") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/DuckDuckGo?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+          //#6-Ecosia✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Ecosia") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/Ecosia?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+          //#7 EveryPixel✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "EveryPixel") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/EveryPixel?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+          //#7 Flickr_account✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Flickr") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/Flickr?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+          //#8-Getty✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Getty") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/Getty?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+          //#9-Gibiru✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Gibiru") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/Gibiru?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+          //#10-Google✅✅✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Google") {
+            myVar = KEY
+            fetch('http://127.0.0.1:5001/Google?ID='+key+"*")
+              .then(res => res.json())
+              .then(data => {
+          })         
+          }
+             //#11-Metacrawler✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Metacrawler") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Metacrawler?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }   
+              //#12-Naver✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Naver") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Naver?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#13-Pexels✅✅✅✅✅✅✅✅✅✅✅✅✅
+          else if (radio.value == "Pexels") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Pexels?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+
+              //#14-Pinterest
+          else if (radio.value == "Pinterest") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Pinterest?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#15-Pixabay
+          else if (radio.value == "Pixabay") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Pixabay?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#16-Qmamu
+              else if (radio.value == "Qmamu") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Qmamu?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+              //#17-Qmamu
+              else if (radio.value == "Qwant") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Qwant?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+              //#18-SearchEncrypt
+              else if (radio.value == "SearchEncrypt") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/SearchEncrypt?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+              //#19-Sogou
+              else if (radio.value == "Sogou") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Sogou?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#20-Swisscows
+              else if (radio.value == "Swisscows") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Swisscows?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#21-Tumblr
+              else if (radio.value == "Tumblr") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Tumblr?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#22-Unsplash
+              else if (radio.value == "Unsplash") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Unsplash?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              //#23-Website
+              else if (radio.value == "Website") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Website?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+              //#24-Yahoo
+              else if (radio.value == "Yahoo") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Yahoo?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+              //#25-Yandex
+              else if (radio.value == "Yandex") {
+                myVar = KEY
+                    fetch('http://127.0.0.1:5001/Yandex?ID='+key+"*")
+                  .then(res => res.json())
+                  .then(data => {
+              })         
+              }
+
+              else {
+                  alert('Nothing is selected');
+              }
+          })
+  });
+
+</script>
+
+
+</body>
+</html>
+
+
